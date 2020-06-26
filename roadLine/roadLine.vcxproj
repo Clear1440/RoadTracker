@@ -141,10 +141,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BWSearch.cpp" />
+    <ClCompile Include="generalFunctions.cpp" />
     <ClCompile Include="hueSearch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BWSearch.h" />
+    <ClInclude Include="generalfunctions.h" />
     <ClInclude Include="hsvSearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

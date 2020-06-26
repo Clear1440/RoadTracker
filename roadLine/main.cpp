@@ -1,17 +1,11 @@
 #include "hsvSearch.h"
+#include "BWSearch.h"
+#include "opencv2\opencv.hpp"
+//#define isvideo 
 
 using namespace cv;
 using namespace std;
 
-
-//initial min and max HSV filter values.
-//these will be changed using trackbars
-int H_MIN = 0;
-int H_MAX = 256;
-int S_MIN = 0;
-int S_MAX = 256;
-int V_MIN = 0;
-int V_MAX = 256;
 
 /* Marks for white in sample.PNG*/
 /*
@@ -34,35 +28,22 @@ int V_MAX = 256;
 	*/
 
 
-
 int main(int argc, char* argv[]) {
-	Mat SamplePhoto, HSV, threshold;
-
+	Mat SamplePhoto;
+#ifdef isvideo
 	VideoCapture cap("sample3.mp4");
+#endif // isvideo
 
-	createTrackbarsHSV(H_MIN, H_MAX, S_MIN, S_MAX, V_MIN, V_MAX);
-	
+
 	while (1) {
-		//SamplePhoto = imread("sample2.PNG", IMREAD_COLOR);//refresh
-		
+#ifdef isvideo
 		cap >> SamplePhoto;
-
-		cvtColor(SamplePhoto, HSV, COLOR_BGR2HSV);
-
-		inRange(HSV, Scalar(H_MIN, S_MIN, V_MIN), Scalar(H_MAX, S_MAX, V_MAX), threshold);
-		//morphOps(threshold);
-		maskThreshold(threshold);
-		
-		//show frames 
-		imshow("Thresholded Image", threshold);
-		//imshow("Original Image", SamplePhoto);
-		//imshow("HSV Image", HSV);
-		drawCenterLine(threshold, SamplePhoto);
-		imshow("with line", SamplePhoto);
-		waitKey(1);
-
+#else 
+		SamplePhoto = imread("sample2.PNG", IMREAD_COLOR);//refresh
+#endif // video
+		//grayscaleFilter(SamplePhoto);
+		HSVFilter(SamplePhoto);
 	}
 	return 0;
 }
-
 
