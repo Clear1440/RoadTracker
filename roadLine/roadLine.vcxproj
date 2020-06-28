@@ -142,12 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BWSearch.cpp" />
+    <ClCompile Include="CannySearch.cpp" />
     <ClCompile Include="generalFunctions.cpp" />
     <ClCompile Include="hueSearch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BWSearch.h" />
+    <ClInclude Include="CannySearch.h" />
     <ClInclude Include="generalfunctions.h" />
     <ClInclude Include="hsvSearch.h" />
   </ItemGroup>

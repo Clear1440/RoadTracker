@@ -1,0 +1,19 @@
+/* Marks for white in sample.PNG*/
+/*
+	H_MIN = 35;
+	H_MAX = 138;
+	S_MIN = 0;
+	S_MAX = 25;
+	V_MIN = 168;
+	V_MAX = 256;
+	*/
+
+/* Marks for white in sample.mp4*/
+/*
+	H_MIN = 4;
+	H_MAX = 256;
+	S_MIN = 0;
+	S_MAX = 245;
+	V_MIN = 129;
+	V_MAX = 171;
+	*/
