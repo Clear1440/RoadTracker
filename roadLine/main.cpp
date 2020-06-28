@@ -1,7 +1,7 @@
 #include "hsvSearch.h"
 #include "BWSearch.h"
 #include "opencv2\opencv.hpp"
-//#define isvideo 
+#define isvideo 
 
 using namespace cv;
 using namespace std;

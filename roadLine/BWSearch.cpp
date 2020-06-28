@@ -11,6 +11,7 @@ void on_trackbarBW(int, void*) {
 	//This function gets called whenever a
 	// trackbar position is changed
 }
+
 void createTrackbarsBW(int& BW_MIN, int& BW_MAX) {
 	namedWindow("Trackbars", 0);
 	//create memory to store trackbar name on window
@@ -18,9 +19,10 @@ void createTrackbarsBW(int& BW_MIN, int& BW_MAX) {
 	sprintf_s(TrackbarName, "BW_MIN", BW_MIN);
 	sprintf_s(TrackbarName, "BW_MAX", BW_MAX);
 
-	createTrackbar("BW_MIN", "Trackbars", &BW_MIN, BW_MAX, on_trackbarBW);
-	createTrackbar("BW_MAX", "Trackbars", &BW_MAX, BW_MAX, on_trackbarBW);
+	createTrackbar("BW_MIN", "Trackbars", &BW_MIN, 255, on_trackbarBW);
+	createTrackbar("BW_MAX", "Trackbars", &BW_MAX, 255, on_trackbarBW);
 }
+
 
 void grayscaleFilter(Mat& Src) {
 	Mat gray, threshold;
