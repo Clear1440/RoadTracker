@@ -52,8 +52,8 @@ void HSVFilter(Mat& Src) {
 	maskThreshold(threshold);
 
 	//show frames 
-	imshow("Thresholded Image", threshold);
-	//imshow("Original Image", SamplePhoto);
+	//imshow("Thresholded Image", threshold);
+	//imshow("Original Image", Src);
 	//imshow("HSV Image", HSV);
 	drawCenterLine(threshold, Src);
 	imshow("with line", Src);

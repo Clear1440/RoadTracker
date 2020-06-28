@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	Mat src;
 #ifdef isvideo
-	VideoCapture cap("curves.mp4");
+	VideoCapture cap("sample.mp4");
 #endif // isvideo
 
 	while (1) {

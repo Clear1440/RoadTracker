@@ -17,11 +17,13 @@ void createTrackbarsCanny(int& Canny_MIN) {
 	//create memory to store trackbar name on window
 	char TrackbarName[50];
 	sprintf_s(TrackbarName, "Canny_MIN", Canny_MIN);
+
 	createTrackbar("Canny_MIN", "Trackbars", &Canny_MIN, 100, on_trackbarCanny);
 }
 
 void cannyFilter(Mat& src) {
 	Mat dst, grayscale, detected_edges;
+	Mat thresh;
 	dst.create(src.size(), src.type());
 
 	cvtColor(src, grayscale, COLOR_BGR2GRAY);
@@ -32,5 +34,13 @@ void cannyFilter(Mat& src) {
 	dst = Scalar::all(0);
 
 	src.copyTo(dst, detected_edges);
-	imshow("dst", dst);
+	cvtColor(dst, dst, COLOR_BGR2GRAY);
+	maskThreshold(dst);
+
+	inRange(dst, 80, 100, thresh);
+
+
+	drawCenterLine(thresh, src, 2);
+
+	imshow("view", src);
 }

@@ -33,7 +33,7 @@ void maskThreshold(Mat& thresh) {
 }
 
 
-void drawCenterLine(const Mat thresh, Mat& drawOn) {
+void drawCenterLine(const Mat thresh, Mat& drawOn, int widthOfLine) {
 	int midpoint = (drawOn.cols / 2);
 	int LborderPos = 0, RborderPos = 0, counter = 0;
 
@@ -46,11 +46,11 @@ void drawCenterLine(const Mat thresh, Mat& drawOn) {
 				counter = 0;
 			}
 
-			if ((counter > 4) && (j < thresh.cols / 2)) {//we want last available left boarder
+			if ((counter > widthOfLine) && (j < thresh.cols / 2)) {//we want last available left boarder
 				LborderPos = j;
 				counter = 0;
 			}
-			else if ((counter > 4) && (RborderPos == 0) && (j > thresh.cols / 2)) {//we want first available right boarder
+			else if ((counter > widthOfLine) && (RborderPos == 0) && (j > thresh.cols / 2)) {//we want first available right boarder
 				RborderPos = j;
 				counter = 0;
 				break;
