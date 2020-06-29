@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="isolateColor.cpp">
+    <ClCompile Include="adaptivethresholding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DftFilter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DftFilter.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

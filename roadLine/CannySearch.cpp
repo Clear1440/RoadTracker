@@ -39,7 +39,6 @@ void cannyFilter(Mat& src) {
 
 	inRange(dst, 80, 100, thresh);
 
-
 	drawCenterLine(thresh, src, 2);
 
 	imshow("view", src);

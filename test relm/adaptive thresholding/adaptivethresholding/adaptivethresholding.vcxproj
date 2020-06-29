@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{DBB19941-BC1F-4F26-9190-14CE9B4E8640}</ProjectGuid>
+    <ProjectGuid>{BC4C0F46-DFA7-47A7-97E9-5C2DCB13FBDF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>isolateColor</RootNamespace>
+    <RootNamespace>adaptivethresholding</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -150,11 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DftFilter.cpp" />
-    <ClCompile Include="isolateColor.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DftFilter.h" />
+    <ClCompile Include="adaptivethresholding.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
