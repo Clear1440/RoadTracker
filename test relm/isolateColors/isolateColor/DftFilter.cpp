@@ -39,11 +39,9 @@ void takeDFT(const Mat& source, Mat& destination) {
 
 void showDFT(const Mat& source) {
 	Mat splitArray[2] = { Mat::zeros(source.size(), CV_32F) , Mat::zeros(source.size(), CV_32F) };
-
 	split(source, splitArray);
 
 	Mat dftMag;
-
 	magnitude(splitArray[0], splitArray[1], dftMag);
 
 	dftMag += Scalar::all(1);
@@ -76,11 +74,11 @@ void lowPassDFTFilter(const Mat& source, Mat& destination) {
 
 	circle(dftMag, Point((dftMag.cols / 2), (dftMag.rows / 2)), 5, 0, FILLED);
 
-	//imshow("lowpass", dftMag);
-	
-	//recenterDFT(dftMag);
+	recenterDFT(dftMag);
 	/*come back from freq*/
-	
+	imshow("lowpass", dftMag);
+
+
 	idft(dftMag, dftMag);
 	imshow("Reconstructed", dftMag);
 

@@ -1,5 +1,10 @@
-#include "hsvSearch.h"
-#include "generalfunctions.h"
+#ifdef __linux
+	#define sprintf_s sprintf
+#endif
+
+
+#include "HSVsearch.hpp"
+#include "generalfunctions.hpp"
 
 using namespace cv;
 using namespace std;

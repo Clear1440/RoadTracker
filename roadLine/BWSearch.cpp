@@ -1,5 +1,5 @@
-#include "BWSearch.h"
-#include "generalfunctions.h"
+#include "generalfunctions.hpp"
+#include "BWSearch.hpp"
 
 using namespace cv;
 using namespace std;
@@ -16,8 +16,8 @@ void createTrackbarsBW(int& BW_MINp, int& BW_MAXp) {
 	namedWindow("Trackbars", 0);
 	//create memory to store trackbar name on window
 	char TrackbarName[50];
-	sprintf_s(TrackbarName, "BW_MIN", BW_MINp);
-	sprintf_s(TrackbarName, "BW_MAX", BW_MAXp);
+	sprintf(TrackbarName, "BW_MIN", BW_MINp);
+	sprintf(TrackbarName, "BW_MAX", BW_MAXp);
 
 	createTrackbar("BW_MIN", "Trackbars", &BW_MINp, 255, on_trackbarBW);
 	createTrackbar("BW_MAX", "Trackbars", &BW_MAXp, 255, on_trackbarBW);

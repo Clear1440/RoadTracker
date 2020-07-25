@@ -13,8 +13,7 @@
             "intelliSenseMode": "msvc-x64",
             "includePath": [
                 "${default}",
-                "D:/projects/app dev/libraries/cpp/opencv/build/include",
-                "D:/projects/app dev/libraries/cpp/opencv/build/include/opencv2"
+                "/run/media/aiden/SSHD/projects/app_dev/libraries/cpp/opencv/build/include/"
             ]
         }
     ],

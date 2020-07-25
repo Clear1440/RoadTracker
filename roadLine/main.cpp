@@ -1,7 +1,7 @@
-#include "hsvSearch.h"
-#include "BWSearch.h"
-#include "CannySearch.h"
-#include "opencv2\opencv.hpp"
+#include "HSVsearch.hpp"
+#include "BWSearch.hpp"
+#include "CannySearch.hpp"
+#include "opencv2/opencv.hpp"
 
 //#define isvideo 
 
@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	Mat src;
 #ifdef isvideo
-	VideoCapture cap("sample.mp4");
+	VideoCapture cap("./examples/vids/sample.mp4");
 #endif // isvideo
 
 	while (1) {
@@ -20,14 +20,14 @@ int main(int argc, char* argv[]) {
 #ifdef isvideo
 		cap >> src;
 #else 
-		src = imread("./examples/pics/multishade.png", IMREAD_COLOR);//refresh
+		src = imread("./examples/pics/sample.PNG", IMREAD_COLOR);//refresh
 #endif // video
 
 		/* Filtering done down here*/
 		//cannyFilter(src);
 		//waitKey(1);//required for Canny
 
-		//grayscaleFilter(src);
+		grayscaleFilter(src);
 		//HSVFilter(src);
 
 	}

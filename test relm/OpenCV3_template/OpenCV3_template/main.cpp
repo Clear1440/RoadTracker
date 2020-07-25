@@ -1,13 +1,11 @@
 #include <string.h>
 #include <iostream>
 #include <sstream>
-#include "opencv2\opencv.hpp"
-#include "opencv2\highgui.hpp"
-
+#include "opencv2/opencv.hpp"
+#include "opencv2/highgui.hpp"
 
 using namespace cv;
 using namespace std;
-
 
 void createTrackbars(void);
 void morphOps(Mat& thresh);
@@ -101,12 +99,12 @@ void createTrackbars() {
 	namedWindow("Trackbars", 0);
 	//create memory to store trackbar name on window
 	char TrackbarName[50];
-	sprintf_s(TrackbarName, "H_MIN", H_MIN);
-	sprintf_s(TrackbarName, "H_MAX", H_MAX);
-	sprintf_s(TrackbarName, "S_MIN", S_MIN);
-	sprintf_s(TrackbarName, "S_MAX", S_MAX);
-	sprintf_s(TrackbarName, "V_MIN", V_MIN);
-	sprintf_s(TrackbarName, "V_MAX", V_MAX);
+	sprintf(TrackbarName, "H_MIN", H_MIN);
+	sprintf(TrackbarName, "H_MAX", H_MAX);
+	sprintf(TrackbarName, "S_MIN", S_MIN);
+	sprintf(TrackbarName, "S_MAX", S_MAX);
+	sprintf(TrackbarName, "V_MIN", V_MIN);
+	sprintf(TrackbarName, "V_MAX", V_MAX);
 	//create trackbars and insert them into window
 	//3 parameters are: the address of the variable that is changing when the trackbar is moved(eg.H_LOW),
 	//the max value the trackbar can move (eg. H_HIGH), 
@@ -131,9 +129,9 @@ void morphOps(Mat& thresh) {
 	Mat dilateElement = getStructuringElement(MORPH_RECT, Size(8, 8));
 
 	erode(thresh, thresh, erodeElement);
-	erode(thresh, thresh, erodeElement);
+	//erode(thresh, thresh, erodeElement);
 
-	//dilate(thresh, thresh, dilateElement);
+	dilate(thresh, thresh, dilateElement);
 	//dilate(thresh, thresh, dilateElement);
 }
 

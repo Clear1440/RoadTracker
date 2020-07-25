@@ -1,5 +1,5 @@
-#include "generalfunctions.h"
-#include "CannySearch.h"
+#include "generalfunctions.hpp"
+#include "CannySearch.hpp"
 
 using namespace std;
 using namespace cv;
@@ -16,7 +16,7 @@ void createTrackbarsCanny(int& Canny_MIN) {
 	namedWindow("Trackbars", 0);
 	//create memory to store trackbar name on window
 	char TrackbarName[50];
-	sprintf_s(TrackbarName, "Canny_MIN", Canny_MIN);
+	sprintf(TrackbarName, "Canny_MIN", Canny_MIN);
 
 	createTrackbar("Canny_MIN", "Trackbars", &Canny_MIN, 100, on_trackbarCanny);
 }

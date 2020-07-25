@@ -1,4 +1,7 @@
-#include "generalfunctions.h"
+#include "generalfunctions.hpp"
+
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
 
 using namespace cv;
 using namespace std;
@@ -58,8 +61,8 @@ void drawCenterLine(const Mat thresh, Mat& drawOn, int widthOfLine) {
 		}
 
 		if ((RborderPos > 0) && (LborderPos > 0)) {//actually found something
-			line(drawOn, { LborderPos, i }, { LborderPos, i }, Scalar(255, 0, 0), 2);//draw red  border
-			line(drawOn, { RborderPos, i }, { RborderPos, i }, Scalar(0, 0, 255), 2);//draw blue border
+			//line(drawOn, { LborderPos, i }, { LborderPos, i }, Scalar(255, 0, 0), 2);//draw red  border
+			//line(drawOn, { RborderPos, i }, { RborderPos, i }, Scalar(0, 0, 255), 2);//draw blue border
 
 			midpoint = (LborderPos + RborderPos) / 2;
 			line(drawOn, { midpoint, i }, { midpoint, i }, Scalar(0, 255, 0), 2);
